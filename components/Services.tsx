@@ -122,20 +122,19 @@ const Services = () => {
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
                             {/* Default State (White Card) */}
-                            <div className="absolute inset-0 bg-white flex flex-col p-8 transition-opacity duration-500 group-hover:opacity-0">
-                                <div className="flex-1 flex items-center justify-center relative w-full">
-                                    <div className="relative w-48 h-48">
-                                        <Image
-                                            src={service.image}
-                                            alt={service.title}
-                                            fill
-                                            className="object-contain"
-                                            priority={index < 3}
-                                        />
-                                    </div>
+                            <div className="absolute inset-0 bg-white flex flex-col transition-opacity duration-500 group-hover:opacity-0">
+                                <div className="relative h-[75%] w-full overflow-hidden">
+                                    <Image
+                                        src={service.image}
+                                        alt={service.title}
+                                        fill
+                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                        priority={index < 3}
+                                    />
+                                    <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/60 to-transparent" />
                                 </div>
-                                <div className="h-24 flex items-center justify-center">
-                                    <h3 className="text-xl font-bold text-slate-800 text-center leading-tight">
+                                <div className="absolute bottom-0 left-0 right-0 h-[30%] flex items-center justify-center px-6 pb-4">
+                                    <h3 className="text-xl font-bold text-slate-800 text-center leading-tight relative z-10">
                                         {service.title}
                                     </h3>
                                 </div>

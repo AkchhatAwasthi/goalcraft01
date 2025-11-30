@@ -1,0 +1,129 @@
+import React from 'react';
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { Metadata } from 'next';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Phone, Mail, MapPin, Send } from 'lucide-react';
+
+export const metadata: Metadata = {
+    title: 'Contact Us | GoalCraft',
+    description: 'Get in touch with GoalCraft for restaurant consulting and growth strategies.',
+};
+
+export default function ContactPage() {
+    return (
+        <div className="min-h-screen flex flex-col bg-slate-50 text-foreground">
+            <Header />
+
+            {/* Hero Section */}
+            <div className="bg-[#0B1E3F] text-white py-20 px-4">
+                <div className="container mx-auto max-w-4xl text-center">
+                    <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
+                    <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
+                        Ready to transform your restaurant business? We're here to help you grow on Swiggy & Zomato.
+                    </p>
+                </div>
+            </div>
+
+            <main className="flex-grow -mt-10 px-4 pb-20 z-10">
+                <div className="container mx-auto max-w-5xl bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
+                    <div className="grid md:grid-cols-5 h-full">
+                        {/* Contact Info Sidebar */}
+                        <div className="md:col-span-2 bg-slate-900 text-white p-8 md:p-12 flex flex-col justify-between relative overflow-hidden">
+                            <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
+                                <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+                                            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" strokeWidth="1" />
+                                        </pattern>
+                                    </defs>
+                                    <rect width="100%" height="100%" fill="url(#grid)" />
+                                </svg>
+                            </div>
+
+                            <div className="relative z-10">
+                                <h2 className="text-2xl font-bold mb-6">Get in Touch</h2>
+                                <p className="text-white/70 mb-8">
+                                    Fill out the form and our team will get back to you within 24 hours.
+                                </p>
+
+                                <div className="space-y-6">
+                                    <div className="flex items-start space-x-4">
+                                        <div className="mt-1 bg-white/10 p-2 rounded-lg">
+                                            <Phone size={20} className="text-white" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-medium text-white">Phone</h3>
+                                            <p className="text-white/70 mt-1">+91 9653814628</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-start space-x-4">
+                                        <div className="mt-1 bg-white/10 p-2 rounded-lg">
+                                            <Mail size={20} className="text-white" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-medium text-white">Email</h3>
+                                            <p className="text-white/70 mt-1">contact@goalcraft.com</p>
+                                        </div>
+                                    </div>
+
+                                    <div className="flex items-start space-x-4">
+                                        <div className="mt-1 bg-white/10 p-2 rounded-lg">
+                                            <MapPin size={20} className="text-white" />
+                                        </div>
+                                        <div>
+                                            <h3 className="font-medium text-white">Location</h3>
+                                            <p className="text-white/70 mt-1">India</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="relative z-10 mt-12">
+                                <div className="flex space-x-4">
+                                    {/* Social icons could go here */}
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* Contact Form */}
+                        <div className="md:col-span-3 p-8 md:p-12 bg-white">
+                            <h2 className="text-2xl font-bold text-slate-800 mb-6">Send us a Message</h2>
+                            <form className="space-y-6">
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div className="space-y-2">
+                                        <label htmlFor="first-name" className="text-sm font-medium text-slate-700">First name</label>
+                                        <Input id="first-name" placeholder="John" className="bg-slate-50 border-slate-200 focus:border-primary focus:ring-primary" />
+                                    </div>
+                                    <div className="space-y-2">
+                                        <label htmlFor="last-name" className="text-sm font-medium text-slate-700">Last name</label>
+                                        <Input id="last-name" placeholder="Doe" className="bg-slate-50 border-slate-200 focus:border-primary focus:ring-primary" />
+                                    </div>
+                                </div>
+                                <div className="space-y-2">
+                                    <label htmlFor="email" className="text-sm font-medium text-slate-700">Email</label>
+                                    <Input id="email" type="email" placeholder="john@example.com" className="bg-slate-50 border-slate-200 focus:border-primary focus:ring-primary" />
+                                </div>
+                                <div className="space-y-2">
+                                    <label htmlFor="phone" className="text-sm font-medium text-slate-700">Phone (Optional)</label>
+                                    <Input id="phone" type="tel" placeholder="+91 98765 43210" className="bg-slate-50 border-slate-200 focus:border-primary focus:ring-primary" />
+                                </div>
+                                <div className="space-y-2">
+                                    <label htmlFor="message" className="text-sm font-medium text-slate-700">Message</label>
+                                    <Textarea id="message" placeholder="Tell us about your restaurant and how we can help..." className="min-h-[150px] bg-slate-50 border-slate-200 focus:border-primary focus:ring-primary resize-none" />
+                                </div>
+                                <Button type="submit" className="w-full md:w-auto bg-[#0B1E3F] hover:bg-[#0B1E3F]/90 text-white px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
+                                    Send Message <Send size={18} className="ml-2" />
+                                </Button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <Footer />
+        </div>
+    );
+}

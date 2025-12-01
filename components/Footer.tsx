@@ -25,6 +25,11 @@ const Footer = () => {
                                 </Link>
                             </li>
                             <li>
+                                <Link href="/swiggy-zomato-growth" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:translate-x-1 inline-block">
+                                    Swiggy & Zomato Growth
+                                </Link>
+                            </li>
+                            <li>
                                 <Link href="/#services" className="text-muted-foreground hover:text-foreground transition-all duration-300 hover:translate-x-1 inline-block">
                                     Our Services
                                 </Link>

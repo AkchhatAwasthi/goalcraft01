@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import Logo from './Logo';
-import { Menu, X, CircleDot, LayoutDashboard } from 'lucide-react';
+import { Menu, X, CircleDot, LayoutDashboard, TrendingUp } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { ToggleGroup, ToggleGroupItem } from '@/components/ui/toggle-group';
 
@@ -62,6 +62,21 @@ const Header = () => {
                                 </Link>
                             </ToggleGroupItem>
                             <ToggleGroupItem
+                                value="growth"
+                                className={cn(
+                                    "px-4 py-2 rounded-full transition-all duration-300 relative hover:scale-105",
+                                    isActive('growth')
+                                        ? 'bg-slate-900 text-white shadow-md'
+                                        : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                                )}
+                                asChild
+                            >
+                                <Link href="/swiggy-zomato-growth" onClick={() => setActivePage('growth')}>
+                                    <TrendingUp size={16} className="inline-block mr-1.5 transition-transform duration-300 group-hover:scale-110" />
+                                    Growth
+                                </Link>
+                            </ToggleGroupItem>
+                            <ToggleGroupItem
                                 value="about"
                                 className={cn(
                                     "px-4 py-2 rounded-full transition-all duration-300 relative hover:scale-105",
@@ -108,6 +123,17 @@ const Header = () => {
                             >
                                 <CircleDot size={16} className="inline-block mr-1.5 transition-transform duration-300 hover:rotate-180" />
                                 How We Work
+                            </Link>
+                            <Link
+                                href="/swiggy-zomato-growth"
+                                className={`px-3 py-2 text-sm rounded-md transition-all duration-300 hover:scale-105 hover:translate-x-2 ${isActive('growth')
+                                    ? 'bg-accent text-accent-foreground'
+                                    : 'text-muted-foreground hover:text-foreground hover:bg-muted'
+                                    }`}
+                                onClick={() => { setActivePage('growth'); setMobileMenuOpen(false); }}
+                            >
+                                <TrendingUp size={16} className="inline-block mr-1.5 transition-transform duration-300 hover:scale-110" />
+                                Growth
                             </Link>
                             <Link
                                 href="/about"

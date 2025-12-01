@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
+import ContactForm from '@/components/ContactForm';
 
 export const metadata: Metadata = {
     title: 'Contact Us | GoalCraft',
@@ -90,36 +91,7 @@ export default function ContactPage() {
                         </div>
 
                         {/* Contact Form */}
-                        <div className="md:col-span-3 p-8 md:p-12 bg-white">
-                            <h2 className="text-2xl font-bold text-slate-800 mb-6">Send us a Message</h2>
-                            <form className="space-y-6">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div className="space-y-2">
-                                        <label htmlFor="first-name" className="text-sm font-medium text-slate-700">First name</label>
-                                        <Input id="first-name" placeholder="John" className="bg-slate-50 border-slate-200 focus:border-primary focus:ring-primary" />
-                                    </div>
-                                    <div className="space-y-2">
-                                        <label htmlFor="last-name" className="text-sm font-medium text-slate-700">Last name</label>
-                                        <Input id="last-name" placeholder="Doe" className="bg-slate-50 border-slate-200 focus:border-primary focus:ring-primary" />
-                                    </div>
-                                </div>
-                                <div className="space-y-2">
-                                    <label htmlFor="email" className="text-sm font-medium text-slate-700">Email</label>
-                                    <Input id="email" type="email" placeholder="john@example.com" className="bg-slate-50 border-slate-200 focus:border-primary focus:ring-primary" />
-                                </div>
-                                <div className="space-y-2">
-                                    <label htmlFor="phone" className="text-sm font-medium text-slate-700">Phone (Optional)</label>
-                                    <Input id="phone" type="tel" placeholder="+91 98765 43210" className="bg-slate-50 border-slate-200 focus:border-primary focus:ring-primary" />
-                                </div>
-                                <div className="space-y-2">
-                                    <label htmlFor="message" className="text-sm font-medium text-slate-700">Message</label>
-                                    <Textarea id="message" placeholder="Tell us about your restaurant and how we can help..." className="min-h-[150px] bg-slate-50 border-slate-200 focus:border-primary focus:ring-primary resize-none" />
-                                </div>
-                                <Button type="submit" className="w-full md:w-auto bg-[#0B1E3F] hover:bg-[#0B1E3F]/90 text-white px-8 py-6 text-lg rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-1">
-                                    Send Message <Send size={18} className="ml-2" />
-                                </Button>
-                            </form>
-                        </div>
+                        <ContactForm />
                     </div>
                 </div>
             </main>

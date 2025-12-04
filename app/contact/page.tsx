@@ -8,6 +8,8 @@ import { Textarea } from '@/components/ui/textarea';
 import { Phone, Mail, MapPin, Send } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
 
+import HeroBanner from '@/components/HeroBanner';
+
 export const metadata: Metadata = {
     title: 'Contact Us | GoalCraft',
     description: 'Get in touch with GoalCraft for restaurant consulting and growth strategies.',
@@ -18,17 +20,13 @@ export default function ContactPage() {
         <div className="min-h-screen flex flex-col bg-slate-50 text-foreground">
             <Header />
 
-            {/* Hero Section */}
-            <div className="bg-[#0B1E3F] text-white py-20 px-4">
-                <div className="container mx-auto max-w-4xl text-center">
-                    <h1 className="text-4xl md:text-5xl font-bold mb-6">Contact Us</h1>
-                    <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
-                        Ready to transform your restaurant business? We're here to help you grow on Swiggy & Zomato.
-                    </p>
-                </div>
-            </div>
+            <HeroBanner
+                imageSrc="https://images.unsplash.com/photo-1534536281715-e28d76689b4d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1770&q=80"
+                title="Contact Us"
+                subtitle="Ready to transform your restaurant business? We're here to help you grow on Swiggy & Zomato."
+            />
 
-            <main className="flex-grow -mt-10 px-4 pb-20 z-10">
+            <main className="flex-grow -mt-20 px-4 pb-20 z-10 relative">
                 <div className="container mx-auto max-w-5xl bg-white rounded-2xl shadow-xl overflow-hidden border border-slate-100">
                     <div className="grid md:grid-cols-5 h-full">
                         {/* Contact Info Sidebar */}

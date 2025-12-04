@@ -189,3 +189,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes loop-scroll {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-loop-scroll {
+  animation: loop-scroll 30s linear infinite;
+}

@@ -23,67 +23,31 @@ export default function ContactForm() {
         setFormData(prev => ({ ...prev, [id === 'first-name' ? 'firstName' : id === 'last-name' ? 'lastName' : id]: value }));
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
         setStatus('idle');
         setErrorMessage('');
 
         try {
-            // Prepare data for Netlify
-            const netlifyBody = new URLSearchParams({
-                'form-name': 'contact',
-                firstName: formData.firstName,
-                lastName: formData.lastName,
-                email: formData.email,
-                phone: formData.phone,
-                message: formData.message,
-            }).toString();
+            // WhatsApp Redirection
+            const whatsappMessage = `*New Contact Request*\n\n*Name:* ${formData.firstName} ${formData.lastName}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Message:* ${formData.message}`;
+            const whatsappUrl = `https://wa.me/919653814628?text=${encodeURIComponent(whatsappMessage)}`;
 
-            // Submit to Netlify
-            const netlifyPromise = fetch('/__forms.html', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: netlifyBody,
+            // Open WhatsApp in new tab
+            window.open(whatsappUrl, '_blank');
+
+            setStatus('success');
+            setFormData({
+                firstName: '',
+                lastName: '',
+                email: '',
+                phone: '',
+                message: ''
             });
-
-            // Submit to internal API (Email)
-            const apiPromise = fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
-            });
-
-            // Wait for both (or at least Netlify if that's the priority, but let's try both)
-            const [netlifyResponse, apiResponse] = await Promise.all([netlifyPromise, apiPromise]);
-
-            if (apiResponse.ok || netlifyResponse.ok) { // Consider success if at least one works, or check both
-                setStatus('success');
-
-                // WhatsApp Redirection
-                const whatsappMessage = `*New Contact Request*\n\n*Name:* ${formData.firstName} ${formData.lastName}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Message:* ${formData.message}`;
-                const whatsappUrl = `https://wa.me/919653814628?text=${encodeURIComponent(whatsappMessage)}`;
-
-                // Open WhatsApp in new tab
-                window.open(whatsappUrl, '_blank');
-
-                setFormData({
-                    firstName: '',
-                    lastName: '',
-                    email: '',
-                    phone: '',
-                    message: ''
-                });
-            } else {
-                const data = await apiResponse.json();
-                setStatus('error');
-                setErrorMessage(data.message || 'Something went wrong. Please try again.');
-            }
         } catch (error) {
             setStatus('error');
-            setErrorMessage('Failed to send message. Please check your connection.');
+            setErrorMessage('Something went wrong. Please try again.');
         } finally {
             setLoading(false);
         }

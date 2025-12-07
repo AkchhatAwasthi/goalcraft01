@@ -41,7 +41,7 @@ export default function ContactForm() {
             }).toString();
 
             // Submit to Netlify
-            const netlifyPromise = fetch('/', {
+            const netlifyPromise = fetch('/__forms.html', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: netlifyBody,
@@ -110,7 +110,7 @@ export default function ContactForm() {
                     </Button>
                 </div>
             ) : (
-                <form onSubmit={handleSubmit} className="space-y-6" name="contact" data-netlify="true">
+                <form onSubmit={handleSubmit} className="space-y-6" name="contact">
                     <input type="hidden" name="form-name" value="contact" />
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">

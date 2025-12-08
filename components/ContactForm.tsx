@@ -32,7 +32,7 @@ export default function ContactForm() {
         try {
             // WhatsApp Redirection
             const whatsappMessage = `*New Contact Request*\n\n*Name:* ${formData.firstName} ${formData.lastName}\n*Email:* ${formData.email}\n*Phone:* ${formData.phone}\n*Message:* ${formData.message}`;
-            const whatsappUrl = `https://wa.me/919653814628?text=${encodeURIComponent(whatsappMessage)}`;
+            const whatsappUrl = `https://wa.me/918448447408?text=${encodeURIComponent(whatsappMessage)}`;
 
             // Open WhatsApp in new tab
             window.open(whatsappUrl, '_blank');

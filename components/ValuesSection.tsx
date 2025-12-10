@@ -21,7 +21,7 @@ const values = [
 ];
 
 const stats = [
-    { value: "30+", label: "Partners" },
+    { value: "99%", label: "Sucess Ratio" },
     { value: "3.8x", label: "Avg Revenue Increase" },
     { value: "60+", label: "Brands" },
     { value: "6", label: "Cities" }

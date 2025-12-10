@@ -1,3 +1,11 @@
+export interface SEOData {
+    title?: string;
+    description?: string;
+    keywords?: string[];
+    ogImage?: string;
+    canonicalUrl?: string;
+}
+
 export interface BlogPost {
     id: string;
     slug: string;
@@ -9,6 +17,7 @@ export interface BlogPost {
     publishedDate: string;
     bannerImage: string;
     icon: string;
+    seo?: SEOData;
     content?: string;
 }
 
@@ -24,6 +33,12 @@ export const blogPosts: BlogPost[] = [
         publishedDate: "2024-01-15T00:00:00Z",
         bannerImage: "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=800",
         icon: "TrendingUp",
+        seo: {
+            title: "Best Restaurant Consultant in Lucknow | GoalCraft",
+            description: "Expert restaurant consulting in Lucknow. Boost Swiggy/Zomato sales, optimize menus, and increase profits with GoalCraft.",
+            keywords: ["restaurant consultant lucknow", "swiggy zomato growth", "restaurant marketing", "menu engineering"],
+            ogImage: "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=800"
+        },
         content: `
             <h2>Why You Need a Restaurant Consultant in Lucknow?</h2>
             <p>Lucknow, the city of Nawabs, is famous for its culinary heritage. From Tunday Kababi to the street food of Aminabad, the city breathes food. However, with the booming food industry, competition has become fierce. Simply having great food is no longer enough. You need a strategic partner to navigate the complexities of modern restaurant management, especially in the digital age.</p>
@@ -93,6 +108,12 @@ export const blogPosts: BlogPost[] = [
         publishedDate: "2024-01-25T00:00:00Z",
         bannerImage: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
         icon: "Users",
+        seo: {
+            title: "Grow on Zomato & Swiggy: Quick Tips | GoalCraft",
+            description: "Master Zomato and Swiggy growth with these quick tips. Optimize listings, run smart ads, and manage reviews effectively.",
+            keywords: ["zomato growth", "swiggy growth", "restaurant marketing tips", "food delivery strategy"],
+            ogImage: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
+        },
         content: `
             <h2>Mastering the Aggregators: Zomato & Swiggy</h2>
             <p>In today's food delivery ecosystem, platforms like Zomato and Swiggy are indispensable. They are the new high street. If you are not visible here, you are invisible to a large chunk of your potential customers. However, standing out among thousands of restaurants requires a strategic approach. It's not enough to just be listed; you need to dominate.</p>
@@ -153,6 +174,12 @@ export const blogPosts: BlogPost[] = [
         publishedDate: "2024-02-10T00:00:00Z",
         bannerImage: "https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=800",
         icon: "Utensils",
+        seo: {
+            title: "How to Grow Food Business on Zomato & Swiggy | GoalCraft",
+            description: "Comprehensive guide to growing your food business on Zomato and Swiggy in 2025. Data-driven strategies for restaurants.",
+            keywords: ["grow food business", "zomato strategies 2025", "swiggy marketing", "restaurant customer retention"],
+            ogImage: "https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=800"
+        },
         content: `
             <h2>Comprehensive Growth Strategies for 2025</h2>
             <p>The food business landscape is evolving rapidly. To stay ahead, you need to adopt a multi-faceted growth strategy. It's not just about good food anymore; it's about technology, data, branding, and customer experience. Here is a comprehensive guide to growing your restaurant business in 2025 and beyond.</p>

@@ -1,5 +1,3 @@
-"use client";
-
 import React from 'react';
 import { blogPosts } from '@/app/data/blogs';
 import Header from '@/components/Header';
@@ -7,11 +5,37 @@ import Footer from '@/components/Footer';
 import Image from 'next/image';
 import { Calendar, User, Clock, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
-import { notFound, useParams } from 'next/navigation';
+import { notFound } from 'next/navigation';
+import { Metadata } from 'next';
 
-export default function BlogPostPage() {
-    const params = useParams();
-    const slug = params?.slug as string;
+type Props = {
+    params: Promise<{ slug: string }>
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+    const { slug } = await params;
+    const post = blogPosts.find((p) => p.slug === slug);
+
+    if (!post) {
+        return {
+            title: 'Blog Not Found | GoalCraft',
+        };
+    }
+
+    return {
+        title: post.seo?.title || post.title,
+        description: post.seo?.description || post.description,
+        keywords: post.seo?.keywords,
+        openGraph: {
+            title: post.seo?.title || post.title,
+            description: post.seo?.description || post.description,
+            images: post.seo?.ogImage ? [{ url: post.seo.ogImage }] : (post.bannerImage ? [{ url: post.bannerImage }] : []),
+        },
+    };
+}
+
+export default async function BlogPostPage({ params }: Props) {
+    const { slug } = await params;
     const post = blogPosts.find((p) => p.slug === slug);
 
     if (!post) {
@@ -104,12 +128,12 @@ export default function BlogPostPage() {
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/#about" className="text-muted-foreground hover:text-primary transition-colors">
+                                            <Link href="/about" className="text-muted-foreground hover:text-primary transition-colors">
                                                 About Us
                                             </Link>
                                         </li>
                                         <li>
-                                            <Link href="/#contact" className="text-muted-foreground hover:text-primary transition-colors">
+                                            <Link href="/contact" className="text-muted-foreground hover:text-primary transition-colors">
                                                 Contact Support
                                             </Link>
                                         </li>

@@ -23,8 +23,8 @@ const values = [
 const stats = [
     { value: "99%", label: "Sucess Ratio" },
     { value: "3.8x", label: "Avg Revenue Increase" },
-    { value: "60+", label: "Brands" },
-    { value: "6", label: "Cities" }
+    { value: "300+", label: "Brands" },
+    { value: "20+", label: "Cities" }
 ];
 
 const ValuesSection = () => {

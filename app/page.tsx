@@ -15,8 +15,8 @@ import OurPartners from '@/components/OurPartners';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'GoalCraft – Restaurant Consulting for Swiggy & Zomato Growth',
-  description: 'Expert restaurant consulting to boost your sales on Swiggy and Zomato. We offer menu engineering, food photography, and strategic marketing.',
+  title: 'GoalCraft: Turn Your Restaurant Into the Next Big Sensation on Zomato & Swiggy',
+  description: 'Fuel your restaurant’s success with data-driven growth, menu magic, and aggregator domination. Let’s make your eatery irresistible — talk to the experts today!',
 };
 
 export default function Home() {

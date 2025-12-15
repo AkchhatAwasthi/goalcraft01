@@ -10,6 +10,11 @@ import Link from 'next/link';
 import Image from 'next/image';
 import BlogCard from '@/components/BlogCard';
 
+export const metadata: Metadata = {
+    title: 'Restaurant Growth Insights – Smart Tips to Boost Orders & Visibility',
+    description: 'Discover practical, proven restaurant strategies from menu design to Swiggy/Zomato growth. Get the edge in this competitive food market — explore now!',
+};
+
 const BlogListing = () => {
     const [visiblePosts, setVisiblePosts] = useState(6);
     const [isVisible, setIsVisible] = useState(false);

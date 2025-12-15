@@ -34,8 +34,8 @@ export const blogPosts: BlogPost[] = [
         bannerImage: "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=800",
         icon: "TrendingUp",
         seo: {
-            title: "Best Restaurant Consultant in Lucknow | GoalCraft",
-            description: "Expert restaurant consulting in Lucknow. Boost Swiggy/Zomato sales, optimize menus, and increase profits with GoalCraft.",
+            title: "Best Restaurant Consultant in Lucknow – Growth That Tastes Like Success",
+            description: "Looking for the top restaurant consultant in Lucknow? Learn how expert guidance can transform your brand — turn footfalls into loyal customers!",
             keywords: ["restaurant consultant lucknow", "swiggy zomato growth", "restaurant marketing", "menu engineering"],
             ogImage: "https://images.pexels.com/photos/958545/pexels-photo-958545.jpeg?auto=compress&cs=tinysrgb&w=800"
         },
@@ -109,8 +109,8 @@ export const blogPosts: BlogPost[] = [
         bannerImage: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
         icon: "Users",
         seo: {
-            title: "Grow on Zomato & Swiggy: Quick Tips | GoalCraft",
-            description: "Master Zomato and Swiggy growth with these quick tips. Optimize listings, run smart ads, and manage reviews effectively.",
+            title: "Proven Ways to Grow Your Restaurant Business – More Orders, More Fans",
+            description: "Learn actionable strategies to skyrocket sales, improve operations & build a brand people love. Turn your restaurant into a local favorite — read now!",
             keywords: ["zomato growth", "swiggy growth", "restaurant marketing tips", "food delivery strategy"],
             ogImage: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800"
         },
@@ -175,8 +175,8 @@ export const blogPosts: BlogPost[] = [
         bannerImage: "https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=800",
         icon: "Utensils",
         seo: {
-            title: "How to Grow Food Business on Zomato & Swiggy | GoalCraft",
-            description: "Comprehensive guide to growing your food business on Zomato and Swiggy in 2025. Data-driven strategies for restaurants.",
+            title: "Grow on Zomato & Swiggy – Restaurant Visibility & Profit Booster Tips",
+            description: "Unlock the secrets to higher rankings, better orders & repeat customers on delivery apps. Turbocharge your restaurant growth with tested tactics!",
             keywords: ["grow food business", "zomato strategies 2025", "swiggy marketing", "restaurant customer retention"],
             ogImage: "https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&cs=tinysrgb&w=800"
         },

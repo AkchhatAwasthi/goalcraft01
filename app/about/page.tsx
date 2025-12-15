@@ -9,8 +9,8 @@ import HeroBanner from '@/components/HeroBanner';
 import PartnersMarquee from '@/components/PartnersMarquee';
 
 export const metadata: Metadata = {
-    title: 'About Us | GoalCraft',
-    description: 'Learn more about GoalCraft and how we help restaurants expand on Swiggy & Zomato.',
+    title: 'About GoalCraft – Where Restaurant Dreams Become Revenue Engines',
+    description: 'Meet the growth architects behind restaurant success. From menu engineering to digital strategy — learn how we help restaurants shine online. Ready to scale? Contact us!',
 };
 
 export default function AboutPage() {

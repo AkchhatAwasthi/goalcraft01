@@ -11,8 +11,8 @@ import ContactForm from '@/components/ContactForm';
 import HeroBanner from '@/components/HeroBanner';
 
 export const metadata: Metadata = {
-    title: 'Contact Us | GoalCraft',
-    description: 'Get in touch with GoalCraft for restaurant consulting and growth strategies.',
+    title: 'Reach GoalCraft – Your Restaurant Growth Partners Are One Message Away!',
+    description: 'Have questions or want an instant growth plan? Talk to real restaurant strategy experts today. Let’s unlock your restaurant’s full potential!',
 };
 
 export default function ContactPage() {

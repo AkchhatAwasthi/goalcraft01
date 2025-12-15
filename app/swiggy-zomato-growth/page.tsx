@@ -9,6 +9,13 @@ import BoostSystemSection from '@/components/BoostSystemSection';
 import ValuesSection from '@/components/ValuesSection';
 import FAQSection from '@/components/FAQSection';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Swiggy & Zomato Growth – Maximize Orders, Rankings & Revenue',
+  description: 'Supercharge your delivery performance with aggregator optimization that works. More visibility, more customers — let’s grow your restaurant together!',
+};
+
 export default function SwiggyZomatoGrowth() {
     return (
         <div className="min-h-screen flex flex-col bg-background text-foreground">
